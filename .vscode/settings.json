@@ -52,5 +52,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "49 Градусов целсия.sln"
+    "dotnet.defaultSolution": "Game-jam.sln"
 }
