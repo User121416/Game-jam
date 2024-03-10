@@ -8,6 +8,7 @@ TagManager:
   - Ground
   - Button_Empt
   - Door
+  - Grabbable
   layers:
   - Default
   - TransparentFX
