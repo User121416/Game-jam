@@ -6,26 +6,27 @@ using UnityEngine.UI;
 public class ButtonScript : MonoBehaviour
 {
     public GameObject hint;
+    public GameObject player;
     private Animator anim;
     void Start()
     {
-        
+        player = GameObject.Find("Player");
         anim = GetComponent<Animator>();
     }
-    private void OnTriggerEnter(Collider other)
+    private void Update()
     {
-        if(other.gameObject.tag == "Check")
+        if (Vector3.Distance(transform.position, player.transform.position) <= 2)
         {
             hint.SetActive(true);
-            if (Input.GetKey(KeyCode.F))
+            if (Input.GetKeyDown(KeyCode.F))
             {
                 anim.SetTrigger("Type");
                 Debug.Log("Кнопка нажата");
             }
-        }     
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        hint.SetActive(false);
+        }
+        else
+        {
+            hint.SetActive(false);
+        }
     }
 }
