@@ -33,6 +33,7 @@ public class Enemy : MonoBehaviour
         }
         
     }
+    
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Player") 
@@ -41,6 +42,7 @@ public class Enemy : MonoBehaviour
             Body.SetActive(false); //Скрывание самого дрона
             Invoke("DeleteDrone", 1f); //Задержка до удаления объкта
         }
+        
     }
     private void DeleteDrone()
     {

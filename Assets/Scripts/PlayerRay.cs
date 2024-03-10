@@ -7,29 +7,34 @@ public class PlayerRay : MonoBehaviour //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï
     public static bool watchDoor;
     void Start()
     {
-        
+
     }
 
-    
+
     void Update()
     {
         Ray ray = new Ray(transform.position, transform.forward); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         Debug.DrawRay(transform.position, transform.forward, Color.red); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
         RaycastHit hit;
-        if(Physics.Raycast(ray, out hit))
+        if (Physics.Raycast(ray, out hit))
         {
-            if(hit.collider.gameObject.tag == "Door")  
+            
+            if (hit.collider.gameObject.tag == "Door")
             {
-                watchDoor = true; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ Door
+               
+                watchDoor = true; 
                 print("huy");
             }
-            else 
+            else
             {
-                watchDoor = false; 
-                print("grsji");
+                watchDoor = false;
             }
-            
+
         }
+        
     }
+   
+   
+
 }
