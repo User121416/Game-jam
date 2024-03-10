@@ -6,7 +6,7 @@ TagManager:
   tags:
   - dorr
   - Ground
-  - Door
+  - Button_Empt
   layers:
   - Default
   - TransparentFX
