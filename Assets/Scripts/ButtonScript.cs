@@ -8,6 +8,7 @@ public class ButtonScript : MonoBehaviour
     public GameObject hint;
     public GameObject player;
     private Animator anim;
+    private int i = 0;
     void Start()
     {
         player = GameObject.Find("Player");
@@ -17,6 +18,7 @@ public class ButtonScript : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, player.transform.position) <= 2)
         {
+            i = 1;
             hint.SetActive(true);
             if (Input.GetKeyDown(KeyCode.F))
             {
@@ -26,7 +28,11 @@ public class ButtonScript : MonoBehaviour
         }
         else
         {
-            hint.SetActive(false);
+            if(i==1)
+            {
+                hint.SetActive(false);
+                i = 0;
+            }
         }
     }
 }
