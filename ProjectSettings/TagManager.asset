@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - dorr
+  - Ground
+  - Button_Empt
   layers:
   - Default
   - TransparentFX
