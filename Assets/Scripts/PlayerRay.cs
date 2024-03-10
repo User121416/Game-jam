@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerRay : MonoBehaviour //СКРИПТ ДОЛЖЕН ЛЕЖАТЬ НА ОБЪЕКТЕ PlayerCamera!
+public class PlayerRay : MonoBehaviour //пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ PlayerCamera!
 {
     public static bool watchDoor;
     void Start()
@@ -13,14 +13,23 @@ public class PlayerRay : MonoBehaviour //СКРИПТ ДОЛЖЕН ЛЕЖАТЬ НА ОБЪЕКТЕ PlayerC
     
     void Update()
     {
-        Ray ray = new Ray(transform.position, transform.forward); //Создание луча
-        Debug.DrawRay(transform.position, transform.forward, Color.red); //Отображение луча
+        Ray ray = new Ray(transform.position, transform.forward); //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
+        Debug.DrawRay(transform.position, transform.forward, Color.red); //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
 
         RaycastHit hit;
         if(Physics.Raycast(ray, out hit))
         {
-            if(hit.collider.gameObject.tag == "Door")  watchDoor = true; //Проверка касается ли луч объекта с тегом Door
-            else watchDoor = false; 
+            if(hit.collider.gameObject.tag == "Door")  
+            {
+                watchDoor = true; //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ Door
+                print("huy");
+            }
+            else 
+            {
+                watchDoor = false; 
+                print("grsji");
+            }
+            
         }
     }
 }
