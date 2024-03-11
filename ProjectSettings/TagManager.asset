@@ -7,6 +7,8 @@ TagManager:
   - dorr
   - Ground
   - Button_Empt
+  - Door
+  - Grabbable
   layers:
   - Default
   - TransparentFX
@@ -14,7 +16,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - GrabCubeForButton
   - 
   - 
   - 

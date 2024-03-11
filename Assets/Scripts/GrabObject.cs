@@ -1,43 +1,41 @@
+using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GrabObject : MonoBehaviour
 {
-    private List<Collider> grabbableObjects = new List<Collider>();
-
-    void OnTriggerEnter(Collider other)
-    {
-        // Добавляем объект в список, если он входит в коллайдер
-        if (other.CompareTag("Grabbable"))
-        {
-            grabbableObjects.Add(other);
-        }
-    }
-
-    void OnTriggerExit(Collider other)
-    {
-        // Удаляем объект из списка, если он выходит из коллайдера
-        if (other.CompareTag("Grabbable") && grabbableObjects.Contains(other))
-        {
-            grabbableObjects.Remove(other);
-        }
-    }
+    public float grabDistance = 2f;
+    private GameObject grabbedObject;
+    private bool isGrabbing = false;
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E)) // Предположим, что клавиша E используется для "хватания"
+        if (Input.GetKeyDown(KeyCode.Mouse0)) // Предполагается, что клавиша G используется для захвата
         {
-            foreach (var grabbable in grabbableObjects)
+            print("Нажата лкм");
+            if (!isGrabbing)
             {
-                // Выполняем действие с объектом
-                GrabObjects(grabbable);
+                RaycastHit hit;
+                if (Physics.Raycast(transform.position, transform.forward, out hit, grabDistance))
+                {
+                    if (hit.collider.gameObject.tag == "Grabbable") // Убедитесь, что у объекта есть тег Grabbable
+                    {
+                        grabbedObject = hit.collider.gameObject;
+                        grabbedObject.GetComponent<Rigidbody>().isKinematic = true; // Делаем объект кинематическим, чтобы он не подвергался воздействию физики
+                        grabbedObject.transform.SetParent(this.transform); // Прикрепляем объект к персонажу
+                        isGrabbing = true;
+                    }
+                }
+            }
+            else
+            {
+                // Отпускаем объект
+                grabbedObject.GetComponent<Rigidbody>().isKinematic = false;
+                grabbedObject.transform.SetParent(null);
+                grabbedObject = null;
+                isGrabbing = false;
             }
         }
-    }
-
-    void GrabObjects(Collider grabbable)
-    {
-        // Здесь ваш код для взаимодействия с объектом
-        Debug.Log("Grabbed: " + grabbable.name);
     }
 }
