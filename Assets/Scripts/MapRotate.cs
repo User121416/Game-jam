@@ -14,14 +14,18 @@ public class MapRotate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (rotateNow == true)
+        if (PauseMenu.gameOn == true)
         {
-            map.transform.eulerAngles = new Vector3(Mathf.MoveTowards(map.transform.eulerAngles.x, 90, 0.3f), map.transform.eulerAngles.y, map.transform.eulerAngles.z);
+            if (rotateNow == true)
+            {
+                map.transform.eulerAngles = new Vector3(Mathf.MoveTowards(map.transform.eulerAngles.x, 90, 0.3f), map.transform.eulerAngles.y, map.transform.eulerAngles.z);
+            }
+            if (rotateNow == false)
+            {
+                map.transform.eulerAngles = new Vector3(Mathf.MoveTowards(map.transform.eulerAngles.x, 0, 0.3f), map.transform.eulerAngles.y, map.transform.eulerAngles.z);
+            }
         }
-        if (rotateNow == false)
-        {
-            map.transform.eulerAngles = new Vector3(Mathf.MoveTowards(map.transform.eulerAngles.x, 0, 0.3f), map.transform.eulerAngles.y, map.transform.eulerAngles.z);
-        }
+        
     }
 
 

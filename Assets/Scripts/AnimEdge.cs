@@ -14,14 +14,18 @@ public class AnimEdge : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (animate = true)
+        if (PauseMenu.gameOn == true)
         {
-            if (AnimPlayer.actionedge == true)
-                anim.SetBool("ActionIs", true);
-            else 
+            if (animate = true)
             {
-                anim.SetBool("ActionIs", false);
+                if (AnimPlayer.actionedge == true)
+                    anim.SetBool("ActionIs", true);
+                else
+                {
+                    anim.SetBool("ActionIs", false);
+                }
             }
         }
+        
     }
 }

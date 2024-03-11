@@ -17,36 +17,40 @@ public class ButtonScript : MonoBehaviour
     }
     private void Update()
     {
-        if (Vector3.Distance(transform.position, player.transform.position) <= 2)
+        if (PauseMenu.gameOn == true)
         {
-            i = 1;
-            hint.SetActive(true);
-            if (Input.GetKeyDown(KeyCode.F) && type == 0)
+            if (Vector3.Distance(transform.position, player.transform.position) <= 2)
             {
-                anim.SetTrigger("Type");
-                Debug.Log("Кнопка нажата");
-            }
-            if (Input.GetKeyDown(KeyCode.F) && type == 1)
-            {
-                anim.SetTrigger("Type");
-                Debug.Log("Кнопка нажата");
-                if (MapRotate.rotateNow == false)
+                i = 1;
+                hint.SetActive(true);
+                if (Input.GetKeyDown(KeyCode.F) && type == 0)
                 {
-                    MapRotate.rotateNow = true;
+                    anim.SetTrigger("Type");
+                    Debug.Log("Кнопка нажата");
                 }
-                else
+                if (Input.GetKeyDown(KeyCode.F) && type == 1)
                 {
-                    MapRotate.rotateNow = false;
+                    anim.SetTrigger("Type");
+                    Debug.Log("Кнопка нажата");
+                    if (MapRotate.rotateNow == false)
+                    {
+                        MapRotate.rotateNow = true;
+                    }
+                    else
+                    {
+                        MapRotate.rotateNow = false;
+                    }
+                }
+            }
+            else
+            {
+                if (i == 1)
+                {
+                    hint.SetActive(false);
+                    i = 0;
                 }
             }
         }
-        else
-        {
-            if (i == 1)
-            {
-                hint.SetActive(false);
-                i = 0;
-            }
-        }
+        
     }
 }

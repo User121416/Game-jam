@@ -16,30 +16,31 @@ public class PlayerRay : MonoBehaviour
 
 
     void Update()
-    {   
-        Ray ray = new Ray(transform.position, transform.forward);
-        Debug.DrawRay(transform.position, transform.forward, Color.yellow);
-        RaycastHit hit;
-        if(Physics.Raycast(ray, out hit))
+    {
+        if (PauseMenu.gameOn == true)
         {
-            if (Vector3.Distance(hit.transform.position, player.transform.position) <= 2 && hit.collider.tag == "Door")
+            Ray ray = new Ray(transform.position, transform.forward);
+            Debug.DrawRay(transform.position, transform.forward, Color.yellow);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit))
             {
-                i = 1;
-                hint.SetActive(true);
-                watchDoor = true;
-            }
-            else
-            {
-                if (i == 1)
+                if (Vector3.Distance(hit.transform.position, player.transform.position) <= 2 && hit.collider.tag == "Door")
                 {
-                    watchDoor = false;
-                    hint.SetActive(false);
-                    i = 0;
+                    i = 1;
+                    hint.SetActive(true);
+                    watchDoor = true;
+                }
+                else
+                {
+                    if (i == 1)
+                    {
+                        watchDoor = false;
+                        hint.SetActive(false);
+                        i = 0;
+                    }
                 }
             }
-        }
-
-        
+        }    
     }
 }
    

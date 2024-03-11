@@ -11,30 +11,33 @@ public class GrabObject : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0)) // Предполагается, что клавиша G используется для захвата
+        if (PauseMenu.gameOn == true)
         {
-            print("Нажата лкм");
-            if (!isGrabbing)
+            if (Input.GetKeyDown(KeyCode.Mouse0)) // Предполагается, что клавиша G используется для захвата
             {
-                RaycastHit hit;
-                if (Physics.Raycast(transform.position, transform.forward, out hit, grabDistance))
+                print("Нажата лкм");
+                if (!isGrabbing)
                 {
-                    if (hit.collider.gameObject.tag == "Grabbable") // Убедитесь, что у объекта есть тег Grabbable
+                    RaycastHit hit;
+                    if (Physics.Raycast(transform.position, transform.forward, out hit, grabDistance))
                     {
-                        grabbedObject = hit.collider.gameObject;
-                        grabbedObject.GetComponent<Rigidbody>().isKinematic = true; // Делаем объект кинематическим, чтобы он не подвергался воздействию физики
-                        grabbedObject.transform.SetParent(this.transform); // Прикрепляем объект к персонажу
-                        isGrabbing = true;
+                        if (hit.collider.gameObject.tag == "Grabbable") // Убедитесь, что у объекта есть тег Grabbable
+                        {
+                            grabbedObject = hit.collider.gameObject;
+                            grabbedObject.GetComponent<Rigidbody>().isKinematic = true; // Делаем объект кинематическим, чтобы он не подвергался воздействию физики
+                            grabbedObject.transform.SetParent(this.transform); // Прикрепляем объект к персонажу
+                            isGrabbing = true;
+                        }
                     }
                 }
-            }
-            else
-            {
-                // Отпускаем объект
-                grabbedObject.GetComponent<Rigidbody>().isKinematic = false;
-                grabbedObject.transform.SetParent(null);
-                grabbedObject = null;
-                isGrabbing = false;
+                else
+                {
+                    // Отпускаем объект
+                    grabbedObject.GetComponent<Rigidbody>().isKinematic = false;
+                    grabbedObject.transform.SetParent(null);
+                    grabbedObject = null;
+                    isGrabbing = false;
+                }
             }
         }
     }

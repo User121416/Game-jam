@@ -13,25 +13,28 @@ public class Door : MonoBehaviour
     }
     void Update()
     {
-        if (PlayerRay.watchDoor == true)
+        if (PauseMenu.gameOn == true)
         {
-            if (Input.GetKey(KeyCode.F) && i == 0 && canOpen==true)
+            if (PlayerRay.watchDoor == true)
             {
-                anim.SetBool("DoorIsOpen", true);
-                i = 1;
-                canOpen = false;
-                Invoke("WaitPls", 0.2f);
-                Debug.Log("1");
-            }
-            if (Input.GetKey(KeyCode.F) && i == 1 && canOpen==true)
-            {
-                anim.SetBool("DoorIsOpen", false);
-                canOpen = false;
-                Invoke("WaitPls", 0.2f);
-                i = 0;
-                Debug.Log("2");
-            }
+                if (Input.GetKey(KeyCode.F) && i == 0 && canOpen == true)
+                {
+                    anim.SetBool("DoorIsOpen", true);
+                    i = 1;
+                    canOpen = false;
+                    Invoke("WaitPls", 0.2f);
+                    Debug.Log("1");
+                }
+                if (Input.GetKey(KeyCode.F) && i == 1 && canOpen == true)
+                {
+                    anim.SetBool("DoorIsOpen", false);
+                    canOpen = false;
+                    Invoke("WaitPls", 0.2f);
+                    i = 0;
+                    Debug.Log("2");
+                }
 
+            }
         }
     }
     public void WaitPls()

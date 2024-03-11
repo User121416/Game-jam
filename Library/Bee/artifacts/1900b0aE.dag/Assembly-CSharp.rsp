@@ -399,6 +399,7 @@
 "Assets/Scripts/GravityChanger.cs"
 "Assets/Scripts/MapRotate.cs"
 "Assets/Scripts/NearGravity.cs"
+"Assets/Scripts/PauseMenu.cs"
 "Assets/Scripts/PlayerRay.cs"
 "Assets/Scripts/RotateOBJ.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs"

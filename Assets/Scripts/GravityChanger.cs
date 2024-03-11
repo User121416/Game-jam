@@ -8,26 +8,29 @@ public class GravityChanger : MonoBehaviour
     public static int gravity = 1;
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E) && i==0)         
+        if (PauseMenu.gameOn == true)
         {
-            Physics.gravity = new Vector3(0, 9.81f, 0);                 //Изменение гравитация на противоположную
-            i = 1;
-            gravity = -1;                                               //Показатель гравитация для других скриптов
-        }
-        if (Input.GetKeyUp(KeyCode.E) && i ==1)
-        {
-            i = 2;
-        }
+            if (Input.GetKeyDown(KeyCode.E) && i == 0)
+            {
+                Physics.gravity = new Vector3(0, 9.81f, 0);                 //Изменение гравитация на противоположную
+                i = 1;
+                gravity = -1;                                               //Показатель гравитация для других скриптов
+            }
+            if (Input.GetKeyUp(KeyCode.E) && i == 1)
+            {
+                i = 2;
+            }
 
-       if (Input.GetKeyDown(KeyCode.E) && i==2)
-       {
-            Physics.gravity = new Vector3(0, -9.81f, 0);
-            i = 3;
-            gravity = 1;
-       }
-       if (Input.GetKeyDown(KeyCode.E) && i ==3)
-       {
-            i = 0;
-       }
+            if (Input.GetKeyDown(KeyCode.E) && i == 2)
+            {
+                Physics.gravity = new Vector3(0, -9.81f, 0);
+                i = 3;
+                gravity = 1;
+            }
+            if (Input.GetKeyDown(KeyCode.E) && i == 3)
+            {
+                i = 0;
+            }
+        }
     }
 }
