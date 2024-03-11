@@ -10,7 +10,7 @@ public class LevelControl : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-
+            SceneManager.LoadScene(5);
         }
     }
 }

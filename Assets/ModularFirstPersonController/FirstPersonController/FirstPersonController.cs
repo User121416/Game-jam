@@ -16,6 +16,7 @@ using UnityEngine.UI;
 
 public class FirstPersonController : MonoBehaviour
 {
+    public static bool steps;
     private Rigidbody rb;
     private bool otherGround = false;
 
