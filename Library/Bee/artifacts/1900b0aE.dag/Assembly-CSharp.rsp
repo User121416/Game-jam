@@ -390,6 +390,7 @@
 "Assets/Scripts/Enemy.cs"
 "Assets/Scripts/GrabObject.cs"
 "Assets/Scripts/GravityChanger.cs"
+"Assets/Scripts/LocationRotation.cs"
 "Assets/Scripts/NearGravity.cs"
 "Assets/Scripts/PlayerRay.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs"
