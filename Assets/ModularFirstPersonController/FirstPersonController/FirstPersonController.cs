@@ -329,9 +329,9 @@ public class FirstPersonController : MonoBehaviour
 
             // Handles sprintBar 
             if (useSprintBar && !unlimitedSprint)
-            {
+            { 
                 float sprintRemainingPercent = sprintRemaining / sprintDuration;
-                sprintBar.transform.localScale = new Vector3(sprintRemainingPercent, 1f, 1f);
+                sprintBar.transform.localScale = new Vector3(sprintRemainingPercent, 6f, 1f);
             }
         }
 

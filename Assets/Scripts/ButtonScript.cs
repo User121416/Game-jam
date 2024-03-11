@@ -9,6 +9,7 @@ public class ButtonScript : MonoBehaviour
     public GameObject player;
     private Animator anim;
     private int i = 0;
+    public int type = 0;
     void Start()
     {
         player = GameObject.Find("Player");
@@ -20,15 +21,28 @@ public class ButtonScript : MonoBehaviour
         {
             i = 1;
             hint.SetActive(true);
-            if (Input.GetKeyDown(KeyCode.F))
+            if (Input.GetKeyDown(KeyCode.F) && type == 0)
             {
                 anim.SetTrigger("Type");
                 Debug.Log("Кнопка нажата");
             }
+            if (Input.GetKeyDown(KeyCode.F) && type == 1)
+            {
+                anim.SetTrigger("Type");
+                Debug.Log("Кнопка нажата");
+                if (MapRotate.rotateNow == false)
+                {
+                    MapRotate.rotateNow = true;
+                }
+                else
+                {
+                    MapRotate.rotateNow = false;
+                }
+            }
         }
         else
         {
-            if(i==1)
+            if (i == 1)
             {
                 hint.SetActive(false);
                 i = 0;
