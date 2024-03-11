@@ -7,9 +7,6 @@ public class DeathCollider : MonoBehaviour
     public Vector3 teleportDestination;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
-        {
-            other.transform.position = teleportDestination;
-        }
+        other.transform.position = teleportDestination;
     }
 }

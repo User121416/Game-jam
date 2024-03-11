@@ -389,6 +389,7 @@
 "Assets/Dynamic Grass FX/Demo/Scripts/Move.cs"
 "Assets/Dynamic Grass FX/Demo/Scripts/Rotate.cs"
 "Assets/ModularFirstPersonController/FirstPersonController/FirstPersonController.cs"
+"Assets/Scripts/AnimEdge.cs"
 "Assets/Scripts/AnimObj.cs"
 "Assets/Scripts/AnimPlayer.cs"
 "Assets/Scripts/ButtonControl.cs"
