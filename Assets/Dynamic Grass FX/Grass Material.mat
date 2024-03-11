@@ -68,13 +68,13 @@ Material:
     - _BaseStages: 0
     - _BendRotationRandom: 0.2
     - _BladeCurve: 2.48
-    - _BladeForward: 0
+    - _BladeForward: 0.326
     - _BladeHeight: 0.5
     - _BladeHeightRandom: 0.3
     - _BladeRandomAmount: 0.5
     - _BladeSegments: 3
-    - _BladeWidth: 0.025
-    - _BladeWidthRandom: 0.054
+    - _BladeWidth: 0
+    - _BladeWidthRandom: 0.032
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
@@ -83,7 +83,7 @@ Material:
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _MaxDistance: 64
-    - _MaxStages: 14.4
+    - _MaxStages: 8.8
     - _Metallic: 0
     - _MinRadius: 8
     - _MinStages: -0.5
@@ -101,7 +101,7 @@ Material:
     - _ViewLOD: 64
     - _ViewRadius: 7
     - _WindScale: 1
-    - _WindStrength: 0.554
+    - _WindStrength: 0.0001
     - _ZWrite: 1
     m_Colors:
     - _BottomColor: {r: 0.061297283, g: 0.378, b: 0.07151349, a: 1}

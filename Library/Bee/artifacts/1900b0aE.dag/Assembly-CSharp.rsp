@@ -388,6 +388,7 @@
 "Assets/Scripts/GrabObject.cs"
 "Assets/Scripts/GravityChanger.cs"
 "Assets/Scripts/NearGravity.cs"
+"Assets/Scripts/PlayerRay.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01_UGUI.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark02.cs"
