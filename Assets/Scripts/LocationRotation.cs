@@ -8,10 +8,10 @@ public class LocationRotation : MonoBehaviour
         {
             if (obj.tag != "Player")
             {
-                if (RotateOBJ.rotate == true)
-                {
-                    obj.transform.Rotate(0, 90, 0);
-                }
+                //if (RotateOBJ.rotate == true)
+                //{
+                //    obj.transform.Rotate(0, 90, 0);
+                //}
             }
         }
     }
