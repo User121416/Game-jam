@@ -1,18 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LocationRotation : MonoBehaviour
 {
-    // Start is called before the first frame update
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        // Перебираем все объекты на сцене
+        foreach (GameObject obj in FindObjectsOfType(typeof(GameObject)))
+        {
+            // Проверяем, не имеет ли объект тег "Player"
+            if (obj.tag != "Player")
+            {
+                // Поворачиваем объект на 90 градусов вокруг оси Y
+                obj.transform.Rotate(0, 90, 0);
+            }
+        }
     }
 }
