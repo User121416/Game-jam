@@ -81,7 +81,7 @@ public class FirstPersonController : MonoBehaviour
     public Image sprintBarBG;
     public Image sprintBar;
     public float sprintBarWidthPercent = .3f;
-    public float sprintBarHeightPercent = .015f;
+    public float sprintBarHeightPercent = 1f;
 
     // Internal Variables
     private CanvasGroup sprintBarCG;

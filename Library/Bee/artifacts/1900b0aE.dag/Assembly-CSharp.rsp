@@ -387,6 +387,7 @@
 "Assets/ModularFirstPersonController/FirstPersonController/FirstPersonController.cs"
 "Assets/Scripts/ButtonControl.cs"
 "Assets/Scripts/ButtonScript.cs"
+"Assets/Scripts/DeathCollider.cs"
 "Assets/Scripts/Door.cs"
 "Assets/Scripts/Enemy.cs"
 "Assets/Scripts/GrabObject.cs"
