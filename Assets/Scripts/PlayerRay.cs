@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerRay : MonoBehaviour 
 {
-    public Transform pointer;
     public static bool watchDoor = false;
     public GameObject player;
     public GameObject hint;
