@@ -110,6 +110,7 @@
     <Compile Include="Assets\Scripts\ButtonScript.cs" />
     <Compile Include="Assets\Scripts\PlayerRay.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
+    <Compile Include="Assets\Scripts\LocationRotation.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Dynamic Grass FX\Shaders\Helpers.cginc" />
