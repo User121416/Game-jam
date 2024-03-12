@@ -153,7 +153,7 @@ MonoBehaviour:
     value: {fileID: 0}
     defaultState: 1
   tonemapper:
-    overrideState: 1
+    overrideState: 0
     value: 0
   toneCurveToeStrength:
     overrideState: 0
@@ -193,8 +193,8 @@ MonoBehaviour:
     overrideState: 0
     value: 30
   saturation:
-    overrideState: 0
-    value: 11
+    overrideState: 1
+    value: 100
   brightness:
     overrideState: 0
     value: 0

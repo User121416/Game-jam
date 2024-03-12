@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class ButtonScript : MonoBehaviour
 {
-    public static bool nxtscene;
     public GameObject hint;
     public GameObject player;
     private Animator anim;
@@ -27,18 +26,12 @@ public class ButtonScript : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.F) && type == 0)
                 {
                     anim.SetTrigger("Type");
-                    Debug.Log("пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ");
-                }
-                if (Input.GetKeyDown(KeyCode.F) && type == 2)
-                {
-                    anim.SetTrigger("Type");
-                    nxtscene = true;
-                    Debug.Log(nxtscene);
+                    Debug.Log("Кнопка нажата");
                 }
                 if (Input.GetKeyDown(KeyCode.F) && type == 1)
                 {
                     anim.SetTrigger("Type");
-                    Debug.Log("пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ");
+                    Debug.Log("Кнопка нажата");
                     if (MapRotate.rotateNow == false)
                     {
                         MapRotate.rotateNow = true;
