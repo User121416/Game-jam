@@ -20,6 +20,9 @@ public class FirstPersonController : MonoBehaviour
     private Rigidbody rb;
     private bool otherGround = false;
 
+    private bool stepReady = false;
+    int j = 0;
+
     #region Camera Movement Variables
 
     public Camera playerCamera;
@@ -41,6 +44,7 @@ public class FirstPersonController : MonoBehaviour
     private float yaw2 = 0.0f;
     private float pitch = 0.0f;
     private Image crosshairObject;
+    public AudioSource stepSound;
 
     #region Camera Zoom Variables
 
@@ -205,6 +209,17 @@ public class FirstPersonController : MonoBehaviour
 
     private void Update()
     {
+        if(stepReady == true && j==0)
+        {
+            stepSound.Play();
+            j = 1;
+        }
+        if (stepReady == false && j == 1)
+        {
+            stepSound.Stop();
+            j = 0;
+        }
+
         if (PauseMenu.gameOn == true)
         {
             #region Camera
@@ -398,15 +413,18 @@ public class FirstPersonController : MonoBehaviour
                 if (targetVelocity.x != 0 || targetVelocity.z != 0 && isGrounded)
                 {
                     isWalking = true;
+                    stepReady = true;
                 }
                 else
                 {
                     isWalking = false;
+                    stepReady = false;
                 }
 
                 // All movement calculations shile sprint is active
                 if (enableSprint && Input.GetKey(sprintKey) && sprintRemaining > 0f && !isSprintCooldown)
                 {
+                     //*********************************************************************************
                     targetVelocity = transform.TransformDirection(targetVelocity) * sprintSpeed;
 
                     // Apply a force that attempts to reach our target velocity
@@ -438,6 +456,7 @@ public class FirstPersonController : MonoBehaviour
                 // All movement calculations while walking
                 else
                 {
+                    
                     isSprinting = false;
 
                     if (hideBarWhenFull && sprintRemaining == sprintDuration)
@@ -582,6 +601,7 @@ public class FirstPersonController : MonoBehaviour
         EditorGUILayout.Space();
 
         fpc.playerCamera = (Camera)EditorGUILayout.ObjectField(new GUIContent("Camera", "Camera attached to the controller."), fpc.playerCamera, typeof(Camera), true);
+        fpc.stepSound = (AudioSource)EditorGUILayout.ObjectField(new GUIContent("StepSound", "StepSound"), fpc.stepSound, typeof(AudioSource), true);
         fpc.fov = EditorGUILayout.Slider(new GUIContent("Field of View", "The camera’s view angle. Changes the player camera directly."), fpc.fov, fpc.zoomFOV, 179f);
         fpc.cameraCanMove = EditorGUILayout.ToggleLeft(new GUIContent("Enable Camera Rotation", "Determines if the camera is allowed to move."), fpc.cameraCanMove);
 
