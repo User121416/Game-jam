@@ -267,12 +267,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2657820881110644391}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sharedProfile: {fileID: 0}
+  sharedProfile: {fileID: 11400000, guid: 00a71135d1561c743ba586ee5ac27e86, type: 2}
   isGlobal: 1
   blendDistance: 0
   weight: 1
@@ -388,7 +388,7 @@ Transform:
   m_GameObject: {fileID: 3581520616636665630}
   serializedVersion: 2
   m_LocalRotation: {x: -0.47535804, y: 0.52348197, z: 0.47535902, w: 0.5234837}
-  m_LocalPosition: {x: -0.17, y: 2.12, z: -0.19}
+  m_LocalPosition: {x: -0.11, y: 2.75, z: 0.66}
   m_LocalScale: {x: 4.1689243, y: 4.1689253, z: 4.168925}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -572,8 +572,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 415a41d0b408ae14397f9743584838fb, type: 3}
+  m_Resource: {fileID: 8300000, guid: 415a41d0b408ae14397f9743584838fb, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.08
   m_Pitch: 1
@@ -677,6 +677,7 @@ GameObject:
   - component: {fileID: 6077874136895077422}
   - component: {fileID: 3492076423733134151}
   - component: {fileID: 8836777009841197091}
+  - component: {fileID: 54098422234482384}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -772,7 +773,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.08
+  m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -917,6 +918,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flashlight: {fileID: 5480405848967304117}
+--- !u!114 &54098422234482384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4291160772219727733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4ad8ce0457ff114aae777fc3a949d8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiElement: {fileID: 0}
 --- !u!1 &4748907086154705287
 GameObject:
   m_ObjectHideFlags: 0
@@ -1096,15 +1110,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 283effa346438f74a864a53111858b0f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.0862579
+      value: 0.55
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 283effa346438f74a864a53111858b0f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.33
+      value: -0.565
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 283effa346438f74a864a53111858b0f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.68
+      value: 0.715
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 283effa346438f74a864a53111858b0f, type: 3}
       propertyPath: m_LocalRotation.w
